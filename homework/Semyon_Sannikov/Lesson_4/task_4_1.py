@@ -22,8 +22,8 @@ print(my_dict['tuple'][-1])
 my_list.append(13)
 my_list.pop(1)
 
-my_dict_data['i am a tuple'] = 'No'
-my_dict_data.pop('i am a tuple')
+my_dict_data[('i am a tuple',)] = 'No'
+my_dict_data.pop(('i am a tuple',))
 
 my_set.add(1234)
 my_set.pop()  # Удаляем случайный элемент
