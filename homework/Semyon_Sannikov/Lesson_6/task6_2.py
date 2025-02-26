@@ -7,4 +7,4 @@ for program_number in range(1, 101):
         print('Fuzz')
     else:
         print(program_number)
-
+        
