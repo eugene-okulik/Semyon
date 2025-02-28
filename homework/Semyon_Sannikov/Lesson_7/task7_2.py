@@ -5,10 +5,10 @@ keys = words.keys()
 a1, b1, c1, d1 = keys
 print(a1, b1, c1, d1)
 while True:
-    a2 = a1*a
-    b2 = b1*b
-    c2 = c1*c
-    d2 = d1*d
+    a2 = a1 * a
+    b2 = b1 * b
+    c2 = c1 * c
+    d2 = d1 * d
     print(a2)
     print(b2)
     print(c2)
