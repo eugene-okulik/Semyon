@@ -1,3 +1,7 @@
+import sys
+
+sys.set_int_max_str_digits(1000000)  
+
 def generation():
     a, b = 0, 1
     while True:
