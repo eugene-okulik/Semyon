@@ -14,3 +14,9 @@ print(new_list)
 print(f' самая высокая температура {max(new_list)}'
       f'\n самая низкая температура {min(new_list)}'
       f'\n средняя температура {int(sum(new_list) / n)}')
+
+
+result = ' '.join(str(x) if x > 28 else '' for x in temperatures).split()
+result = ' '.join(result)
+new_list_map = list(map(int, result.split()))
+print(new_list_map)
