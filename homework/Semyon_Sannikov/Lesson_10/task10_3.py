@@ -13,8 +13,8 @@ def decorator(func):
             symv = operation
         return func(first, second, symv)
 
-
     return wrapper
+
 
 @decorator
 def calc(first, second, operation):
@@ -30,6 +30,7 @@ def calc(first, second, operation):
         return "Знаменатель не может быть равным 0"
     else:
         return "Неизвестная операция"
+
 
 num_1, num_2 = map(int, input("Чтобы получить результат, введите два числа через пробел: ").split())
 result = calc(num_1, num_2)
