@@ -9,5 +9,7 @@ PRICE_LIST = '''тетрадь 50р
 
 old_list = PRICE_LIST.split()
 names = old_list[::2]
-prices = map(lambda p: int(p[:-1]), old_list[1::2])
-print(dict(zip(names, prices)))
+prices = old_list[1::2]
+actual_price = [int(p[:-1]) for p in prices]
+price_dict = dict(zip(names, actual_price))
+print(price_dict)
