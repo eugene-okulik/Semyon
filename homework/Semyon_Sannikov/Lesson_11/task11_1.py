@@ -11,7 +11,7 @@ class Book:
 
 
 class SchoolBook(Book):
-    def __init__(self, book_title, author, number_of_pages, ISBN, flag_reserved, lesson, group, assignments=True ):
+    def __init__(self, book_title, author, number_of_pages, ISBN, flag_reserved, lesson, group, assignments=True):
         super().__init__(book_title, author, number_of_pages, ISBN, flag_reserved)
         self.lesson = lesson
         self.group = group
@@ -22,6 +22,7 @@ def book_list(book):
     reserved = ", зарезервирована" if book.flag_reserved else ""
     print(f"Название: {book.book_title}, Автор: {book.author},"
           f" страниц: {book.number_of_pages}, {book.pages_of_material}{reserved}")
+
 
 def school_book_list(school_books):
     reserved = ", зарезервирована" if school_books.flag_reserved else ""
