@@ -1,6 +1,7 @@
 class Flowers:
     root = True
     stem = True
+
     def __init__(self, petal_color, number_of_petals, time_to_go, price):
         self.petal_color = petal_color
         self.number_of_petals = number_of_petals
@@ -9,13 +10,13 @@ class Flowers:
 
 
 class Rose(Flowers):
-    def __init__(self, petal_color, number_of_petals, time_to_go, price, thorny = True):
+    def __init__(self, petal_color, number_of_petals, time_to_go, price, thorny=True):
         super().__init__(petal_color, number_of_petals, time_to_go, price)
         self.thorny = thorny
 
 
 class Chamomile(Flowers):
-    def __init__(self, petal_color, number_of_petals, time_to_go, price, loves = True):
+    def __init__(self, petal_color, number_of_petals, time_to_go, price, loves=True):
         super().__init__(petal_color, number_of_petals, time_to_go, price)
         self.loves = loves
 
@@ -59,7 +60,8 @@ class Bouquet:
             return
         print(f"Сортировка по {by}:")
         for f in self.flowers:
-            print(f"{f.__class__.__name__}: {f.petal_color}, {f.number_of_petals} лепестков, {f.price} руб., {f.time_to_go} дней")
+            print(f"{f.__class__.__name__}: {f.petal_color}, {f.number_of_petals} лепестков, "
+                  f"{f.price} руб., {f.time_to_go} дней")
 
     def find(self, by, value):
         found = [f for f in self.flowers if getattr(f, by, None) == value]
@@ -68,8 +70,10 @@ class Bouquet:
         else:
             print(f"Найдено цветов с {by} = {value}: {len(found)}")
             for f in found:
-                print(f"{f.__class__.__name__}: {f.petal_color}, {f.number_of_petals} лепестков, {f.price} руб., {f.time_to_go} дней")
+                print(f"{f.__class__.__name__}: {f.petal_color}, {f.number_of_petals} лепестков, "
+                      f"{f.price} руб., {f.time_to_go} дней")
         return found
+
 
 f1 = Rose('Red', 30, 10, 150)
 f2 = Tulip('Yellow', 12, 7, 80, wild=True)
