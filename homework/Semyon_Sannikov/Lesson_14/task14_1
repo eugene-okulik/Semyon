@@ -1,0 +1,38 @@
+INSERT INTO students (name, second_name, group_id) VALUES ('Luck', 'Maxov', 5469)
+
+INSERT INTO books (title, taken_by_student_id) VALUES ('Azbuka', 20872)
+
+INSERT INTO books (title, taken_by_student_id) VALUES ('Azbuka_blue', 20872)
+
+INSERT INTO groups (title, start_date, end_date) VALUES ('Semyon_test', 'aug_2025', 'dec_2025')
+
+INSERT INTO subjects (title) VALUES ('Физика')
+
+INSERT INTO subjects (title) VALUES ('Логика')
+
+INSERT INTO lessons (title, subject_id) VALUES ('Semyon_Lessons_1', '11601')
+
+INSERT INTO lessons (title, subject_id) VALUES ('Semyon_Lessons_2', '11602')
+
+INSERT INTO marks (value, lesson_id, student_id) values (2, 11641, 20872)
+
+INSERT INTO marks (value, lesson_id, student_id) values (3, 11642, 20872)
+
+SELECT name, second_name, value from students
+join marks
+on students.id = marks.student_id
+and students.id = 20872
+
+SELECT name, second_name, title from students
+join books
+on students.id = books.taken_by_student_id
+and books.taken_by_student_id = 20872
+
+SELECT s.name, s.second_name, g.title, b.title, m.value, l.title, sub.title
+from students s
+left join `groups` g on s.group_id = g.id
+LEFT JOIN books b ON s.id = b.taken_by_student_id
+LEFT JOIN marks m ON s.id = m.student_id
+LEFT JOIN lessons l ON m.lesson_id = l.id
+LEFT JOIN subjects sub ON l.subject_id = sub.id
+where s.id = 20872
