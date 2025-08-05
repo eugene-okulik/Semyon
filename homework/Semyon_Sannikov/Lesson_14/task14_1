@@ -6,6 +6,8 @@ INSERT INTO books (title, taken_by_student_id) VALUES ('Azbuka_blue', 20872)
 
 INSERT INTO groups (title, start_date, end_date) VALUES ('Semyon_test', 'aug_2025', 'dec_2025')
 
+UPDATE students SET group_id = 5469 where id = 20872
+
 INSERT INTO subjects (title) VALUES ('Физика')
 
 INSERT INTO subjects (title) VALUES ('Логика')
@@ -36,3 +38,5 @@ LEFT JOIN marks m ON s.id = m.student_id
 LEFT JOIN lessons l ON m.lesson_id = l.id
 LEFT JOIN subjects sub ON l.subject_id = sub.id
 where s.id = 20872
+
+SELECT * from`groups` where title ='Semyon_test'
