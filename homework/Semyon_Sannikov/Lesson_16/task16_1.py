@@ -3,7 +3,6 @@ import os
 import dotenv
 import csv
 
-
 with open(r"..\..\eugene_okulik\Lesson_16\hw_data\data.csv", newline='') as csv_file:
     file = csv.DictReader(csv_file)
     data = []
@@ -39,15 +38,15 @@ for student in data:
     LEFT JOIN subjects sub ON sub.id = l.subject_id AND sub.title = %s
     WHERE s.name = %s AND s.second_name = %s
     """,
-    (
-        student['group_title'],
-        student['book_title'],
-        student['mark_value'],
-        student['lesson_title'],
-        student['subject_title'],
-        student['name'],
-        student['second_name']
-     ))
+                   (
+                       student['group_title'],
+                       student['book_title'],
+                       student['mark_value'],
+                       student['lesson_title'],
+                       student['subject_title'],
+                       student['name'],
+                       student['second_name']
+                   ))
 
     results = cursor.fetchall()
     # Шаг 1: Проверяем, есть ли вообще студент с таким именем в базе
