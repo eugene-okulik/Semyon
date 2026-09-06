@@ -78,6 +78,9 @@ for student in data:
     if not found_marks:
         missing.append(student['mark_value'])
 
+    missing_str = '\n'.join(missing)
     if missing:
+        # print(f"Студент - 'Имя': '{student['name']}', 'Фамилия': '{student['second_name']}',"
+        #       f" не хватает в базе: '{'\n'.join(missing)}'")
         print(f"Студент - 'Имя': '{student['name']}', 'Фамилия': '{student['second_name']}',"
-              f" не хватает в базе: '{'\n'.join(missing)}'")
+              f" не хватает в базе: '{missing_str}'")
