@@ -30,8 +30,8 @@ for student in data:
     m.value as mark_value,
     l.title as lesson_title,
     sub.title as subject_title
-    FROM students s 
-    LEFT JOIN `groups` g ON g.id = s.group_id AND g.title = %s 
+    FROM students s
+    LEFT JOIN `groups` g ON g.id = s.group_id AND g.title = %s
     LEFT JOIN books b ON b.taken_by_student_id = s.id AND b.title = %s
     LEFT JOIN marks m ON m.student_id = s.id AND m.value = %s
     LEFT JOIN lessons l ON l.id = m.lesson_id AND l.title = %s
