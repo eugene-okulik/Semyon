@@ -7,7 +7,7 @@ base_path = os.path.dirname(__file__)
 my_path = os.path.dirname(base_path)
 okulik_path = os.path.dirname(my_path)
 lesson_path = os.path.dirname(okulik_path)
-result_path = os.path.join(okulik_path, "eugene_okulik", 'Lesson_16', "hw_data", 'data.csv')
+result_path = os.path.join(lesson_path, "eugene_okulik", 'Lesson_16', "hw_data", 'data.csv')
 
 with open(result_path, newline='') as csv_file:
     file = csv.DictReader(csv_file)
