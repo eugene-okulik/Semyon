@@ -3,7 +3,13 @@ import os
 import dotenv
 import csv
 
-with open(r"..\..\eugene_okulik\Lesson_16\hw_data\data.csv", newline='') as csv_file:
+base_path = os.path.dirname(__file__)
+my_path = os.path.dirname(base_path)
+okulik_path = os.path.dirname(my_path)
+lesson_path = os.path.dirname(okulik_path)
+result_path = os.path.join(okulik_path, "eugene_okulik", 'Lesson_16', "hw_data", 'data.csv')
+
+with open(result_path, newline='') as csv_file:
     file = csv.DictReader(csv_file)
     data = []
     for row in file:
@@ -20,7 +26,6 @@ db = mysql.connect(
 
 cursor = db.cursor(dictionary=True)
 for student in data:
-    # Делаем один запрос, соединяя ВСЕ таблицы по вашей схеме через LEFT JOIN
     cursor.execute("""
     SELECT
     s.group_id,
@@ -49,7 +54,7 @@ for student in data:
                    ))
 
     results = cursor.fetchall()
-    # Шаг 1: Проверяем, есть ли вообще студент с таким именем в базе
+
     if not results:
         print(f" В базе данных полностью отсутствует студент: {student['name']} {student['second_name']}")
         continue
@@ -78,7 +83,7 @@ for student in data:
     if not found_marks:
         missing.append(student['mark_value'])
 
-    missing_str = '\n'.join(missing)
+    missing_str = ',\n'.join(missing)
     if missing:
         # print(f"Студент - 'Имя': '{student['name']}', 'Фамилия': '{student['second_name']}',"
         #       f" не хватает в базе: '{'\n'.join(missing)}'")
