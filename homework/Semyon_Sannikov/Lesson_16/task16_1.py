@@ -10,9 +10,7 @@ result_path = os.path.join(okulik_path, "eugene_okulik", 'Lesson_16', "hw_data",
 
 with open(result_path, newline='') as csv_file:
     file = csv.DictReader(csv_file)
-    data = []
-    for row in file:
-        data.append(row)
+    data = [row for row in file]
 
 dotenv.load_dotenv()
 db = mysql.connect(
